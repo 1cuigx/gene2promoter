@@ -67,3 +67,7 @@ for id in promoter_loc:
             promoter_seq[id] = rev_com(chr_seq['Mt'][start:end])
         elif id[2] == 'C':
             promoter_seq[id] = rev_com(chr_seq['Pt'][start:end])
+
+with open('Arabidopsis_thaliana.TAIR10.promoter.fa', 'w') as prom:
+    for t in promoter_seq:
+        print('>' + t, promoter_seq[t], sep='\n', file=prom)
